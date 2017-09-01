@@ -2,6 +2,11 @@
     "name": "DuckDuckGo for Chrome",
     "version": "42.8.12",
     "description": "DuckDuckGo enhancements for Chrome.",
+    "applications": {
+        "gecko": {
+            "id": "testing@duckduckgo.com"
+        }
+    },
     "icons": {
         "16": "img/icon_16.png",
         "48": "img/icon_48.png",
