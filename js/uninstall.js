@@ -21,7 +21,7 @@ window.onload = function() {
         event.preventDefault();
         event.stopPropagation();
 
-        chrome.extension.sendMessage({uninstall: true});
+        chrome.runtime.sendMessage({uninstall: true});
 
         return false;
     }

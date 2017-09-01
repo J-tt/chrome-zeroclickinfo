@@ -42,7 +42,7 @@ function save_options() {
     status.innerHTML = "";
   }, 750);
 
-  chrome.extension.sendMessage({
+  browser.runtime.sendMessage({
     'options': localStorage
   }, function(response) {
     console.log(response);

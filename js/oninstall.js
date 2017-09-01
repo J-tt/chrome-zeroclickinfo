@@ -15,4 +15,4 @@
  */
 
 var atbParam = document.querySelector('html').getAttribute('data-chromeatb');
-chrome.runtime.sendMessage({atb: atbParam});
+browser.runtime.sendMessage({atb: atbParam});

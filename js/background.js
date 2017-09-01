@@ -67,9 +67,9 @@ function Background() {
 
   localStorage['os'] = os;
 
-  chrome.runtime.setUninstallURL('https://www.surveymonkey.com/r/7D6LNKM_DOC_0');
+  browser.runtime.setUninstallURL('https://www.surveymonkey.com/r/7D6LNKM_DOC_0');
 
-  chrome.runtime.onInstalled.addListener(function(details) {
+  browser.management.onInstalled.addListener(function(details) {
     // only run the following section on install
     if (details.reason !== "install") {
       return;
@@ -85,14 +85,14 @@ function Background() {
     }
 
     // inject the oninstall script to opened DuckDuckGo tab.
-    chrome.tabs.query({ url: 'https://*.duckduckgo.com/*' }, function (tabs) {
+    browser.tabs.query({ url: 'https://*.duckduckgo.com/*' }, function (tabs) {
       var i = tabs.length, tab;
       while (i--) {
         tab = tabs[i];
-        chrome.tabs.executeScript(tab.id, {
+        browser.tabs.executeScript(tab.id, {
           file: 'js/oninstall.js'
         });
-        chrome.tabs.insertCSS(tab.id, {
+        browser.tabs.insertCSS(tab.id, {
           file: 'css/noatb.css'
         });
       }
@@ -100,13 +100,13 @@ function Background() {
 
   });
 
-  chrome.runtime.onMessage.addListener(function(request, sender, callback) {
+  browser.runtime.onMessage.addListener(function(request, sender, callback) {
     if (request.options) {
       callback(localStorage);
     }
 
     if (request.current_url) {
-      chrome.tabs.getSelected(function(tab) {
+      browser.tabs.getSelected(function(tab) {
         var url = tab.url;
         callback(url);
       });
@@ -131,25 +131,25 @@ function Background() {
 
 var background = new Background();
 
-chrome.alarms.create('updateUninstallURL', {periodInMinutes: 1});
+browser.alarms.create('updateUninstallURL', {periodInMinutes: 1});
 
-chrome.alarms.onAlarm.addListener(function(alarmEvent){
+browser.alarms.onAlarm.addListener(function(alarmEvent){
     if (alarmEvent.name === 'updateUninstallURL') {
         var ogMajor = localStorage['majorVersion'],
             ogMinor = localStorage['minorVersion'],
             atbDelta = background.atbDelta(ogMajor, ogMinor),
             uninstallURLParam = atbDelta <= 14 ? atbDelta : 15;
 
-        chrome.runtime.setUninstallURL('https://www.surveymonkey.com/r/7D6LNKM_DOC_' + uninstallURLParam);
+        browser.runtime.setUninstallURL('https://www.surveymonkey.com/r/7D6LNKM_DOC_' + uninstallURLParam);
     }
 });
 
-chrome.omnibox.onInputEntered.addListener(function(text) {
-  chrome.tabs.query({
+browser.omnibox.onInputEntered.addListener(function(text) {
+  browser.tabs.query({
     'currentWindow': true,
     'active': true
   }, function(tabs) {
-    chrome.tabs.update(tabs[0].id, {
+    browser.tabs.update(tabs[0].id, {
       url: "https://duckduckgo.com/?q=" + encodeURIComponent(text) + "&bext=" + localStorage['os'] + "cl"
     });
   });
@@ -157,19 +157,19 @@ chrome.omnibox.onInputEntered.addListener(function(text) {
 
 //This adds Context Menu when user select some text.
 //create context menu
-chrome.contextMenus.create({
+browser.contextMenus.create({
   title: 'Search DuckDuckGo for "%s"',
   contexts: ["selection"],
   onclick: function(info) {
     var queryText = info.selectionText;
-    chrome.tabs.create({
+    browser.tabs.create({
       url: "https://duckduckgo.com/?q=" + queryText + "&bext=" + localStorage['os'] + "cr"
     });
   }
 });
 
 // Add ATB param
-chrome.webRequest.onBeforeRequest.addListener(
+browser.webRequest.onBeforeRequest.addListener(
     function (e) {
       // Only change the URL if there is no ATB param specified.
       if (e.url.indexOf('atb=') !== -1) {
@@ -196,7 +196,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     ["blocking"]
 );
 
-chrome.webRequest.onCompleted.addListener(
+browser.webRequest.onCompleted.addListener(
     function () {
       var atb = localStorage['atb'],
           setATB = localStorage['set_atb'];

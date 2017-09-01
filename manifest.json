@@ -57,6 +57,7 @@
         "contextMenus",
         "webRequest",
         "webRequestBlocking",
-        "*://*.duckduckgo.com/"
+        "*://*.duckduckgo.com/",
+        "management"
     ]
 }
