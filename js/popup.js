@@ -108,7 +108,7 @@ window.onload = function() {
 
     defaults_check();
 
-    chrome.extension.onMessage.addListener(function(request, sender, sendResponse){
+    browser.runtime.onMessage.addListener(function(request, sender, sendResponse){
       defaults_check();
     });
 
@@ -173,11 +173,11 @@ window.onload = function() {
 
             fake_post_code = fake_post_code.replace('{{{PARAMS}}}', JSON.stringify(params));
 
-            chrome.tabs.create({
+            browser.tabs.create({
                 url:  "javascript:" + fake_post_code + "; fake_post();"
             });
         } else {
-            chrome.tabs.create({
+            browser.tabs.create({
                 url: "https://duckduckgo.com/?q="+encodeURIComponent(input)+special
             });
         }
