@@ -69,7 +69,11 @@ window.onload = function() {
     document.getElementById('adv_meanings').onclick = meanings_check;
 
     document.getElementById('addons').onclick = function(){
-        chrome.tabs.create({url: "html/options.html"});
+        //if (chrome) 
+            //chrome.tabs.create({url: "html/options.html"});
+        //} else {
+            browser.tabs.create({url: "options.html"});
+        //}
     }
 
 
