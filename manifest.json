@@ -1,10 +1,10 @@
 {
-    "name": "DuckDuckGo for Chrome",
+    "name": "Unofficial DuckDuckGo Plus for Firefox",
     "version": "42.8.12",
-    "description": "DuckDuckGo enhancements for Chrome.",
+    "description": "DuckDuckGo enhancements for Firefox.",
     "applications": {
         "gecko": {
-            "id": "testing@duckduckgo.com"
+            "id": "j-tt@tuta.io"
         }
     },
     "icons": {
