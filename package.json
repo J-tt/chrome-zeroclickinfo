@@ -1,10 +1,10 @@
 {
-  "name": "chrome_zeroclickinfo",
+  "name": "firefoxwe_zeroclickinfo",
   "version": "0.100.0",
   "engines": {
     "node": ">=4.2"
   },
-  "repository": "duckduckgo/chrome-zeroclickinfo",
+  "repository": "j-tt/firefoxwe-zeroclickinfo",
   "scripts": {
     "postinstall": "export PATH='$PATH:$PWD/node_modules/chromedriver/bin'",
     "test": "concurrently 'npm run jshint' 'npm run selenium'",

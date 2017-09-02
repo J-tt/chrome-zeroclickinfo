@@ -4,7 +4,7 @@
     "description": "DuckDuckGo enhancements for Firefox.",
     "applications": {
         "gecko": {
-            "id": "j-tt@tuta.io"
+            "id": "testing@duckduckgo.com"
         }
     },
     "icons": {
