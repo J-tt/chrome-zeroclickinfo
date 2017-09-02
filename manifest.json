@@ -4,7 +4,8 @@
     "description": "DuckDuckGo enhancements for Firefox.",
     "applications": {
         "gecko": {
-            "id": "testing@duckduckgo.com"
+            "id": "testing@duckduckgo.com",
+            "strict_min_version": "55.0"
         }
     },
     "icons": {
