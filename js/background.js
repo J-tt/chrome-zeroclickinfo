@@ -106,7 +106,7 @@ function Background() {
     }
 
     if (request.current_url) {
-      browser.tabs.query({active: true})function(tab) {
+      browser.tabs.query({active: true}), function(tab) {
         var url = tab.url;
         callback(url);
       });

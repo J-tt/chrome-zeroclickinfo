@@ -1,0 +1,1 @@
+var background = new Background();
