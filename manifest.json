@@ -1,6 +1,6 @@
 {
     "name": "Unofficial DuckDuckGo Plus for Firefox",
-    "version": "43.0.0",
+    "version": "43.0.1",
     "description": "DuckDuckGo enhancements for Firefox.",
     "applications": {
         "gecko": {

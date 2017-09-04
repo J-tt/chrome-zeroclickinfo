@@ -42,6 +42,8 @@ var FAKE_POST_FUNCTION =
 
 window.onload = function() {
 
+    search_input_clear();
+
     document.getElementById('search_form_input_homepage').focus();
 
     document.getElementById('search_form_homepage').onsubmit = search;
@@ -176,10 +178,12 @@ window.onload = function() {
             browser.tabs.create({
                 url:  "javascript:" + fake_post_code + "; fake_post();"
             });
+            document.getElementById("topbar").hidePopup();
         } else {
             browser.tabs.create({
                 url: "https://duckduckgo.com/?q="+encodeURIComponent(input)+special
             });
+            window.close();
         }
     }
 
