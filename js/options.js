@@ -24,6 +24,8 @@ function save_options() {
   localStorage["zeroclick_google_right"] = zeroclick_google_right;
   var use_post = document.getElementById("use_post").checked;
   localStorage["use_post"] = use_post;
+  var use_beta = document.getElementById("use_beta").checked;
+  localStorage["use_beta"] = use_beta;
   var safesearch = document.getElementById("safesearch").checked;
   localStorage["safesearch"] = safesearch;
 
@@ -77,6 +79,13 @@ function restore_options() {
     document.getElementById("use_post").checked = true;
   } else {
     document.getElementById("use_post").checked = false;
+  }
+
+  var use_beta = localStorage["use_beta"];
+  if (use_beta === 'true') {
+    document.getElementById("use_beta").checked = true;
+  } else {
+    document.getElementById("use_beta").checked = false;
   }
 
   var safesearch = localStorage["safesearch"];
