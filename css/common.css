@@ -186,8 +186,7 @@
 }
 
 .ddg_zeroclick_category{
-    /* background-image: url("data:image/gif;base64,R0lGODlhEAAQAMQQAKCgoJiYmIaGho6OjqSkpHt7e35+fq6urqurq4KCgoqKipycnJOTk3h4eLCwsKioqP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABAALAAAAAAQABAAAAVYICQ6ZGmWInSkLLu2cIo8dG3X4kPE7A4RAF4qCAEsRIuk8ghhLgJCERQSYIgY2KwVsmUMopBvWCFSmM9kSFohALchgoQoQaez5HQDWC8qgP0iDYKDhIMpIQA7"); */
-    background-image: url(https://duckduckgo.com/assets/icon_category.v101.png);
+    background-image: url(../img/assets/icon_category.v101.png);
     background-repeat: no-repeat;
     line-height: 22px;
     border: 1px solid #fafafa;
@@ -195,15 +194,14 @@
 
 
 .ddg_zeroclick_article{
-    /* background-image: url("data:image/gif;base64,R0lGODlhEAAQAMQQAKCgoJiYmIaGho6OjqSkpHt7e35+fq6urqurq4KCgoqKipycnJOTk3h4eLCwsKioqP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABAALAAAAAAQABAAAAVYICQ6ZGmWInSkLLu2cIo8dG3X4kPE7A4RAF4qCAEsRIuk8ghhLgJCERQSYIgY2KwVsmUMopBvWCFSmM9kSFohALchgoQoQaez5HQDWC8qgP0iDYKDhIMpIQA7"); */
-    background-image: url(https://duckduckgo.com/assets/icon_article.v101.png);
+    background-image: url(../img/icon_article.v101.png);
     background-repeat: no-repeat;
     line-height: 22px;
     border: 1px solid #fafafa;
 }
 
 .ddg_zeroclick_more{
-    background-image: url(https://duckduckgo.com/assets/icon_ellipsis.v101.png);
+    background-image: url(../img/icon_ellipsis.v101.png);
     background-repeat: no-repeat;
     line-height: 22px;
     border: 1px solid #fafafa;
